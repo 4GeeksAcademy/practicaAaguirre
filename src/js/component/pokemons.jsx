@@ -17,8 +17,10 @@ export const Pokemons = () => {
         setPokemons(data.results);
 
     }
+    if (pokemons.length === 0) {
+        dataPokemons();
 
-    dataPokemons();
+    }
 
 
 
@@ -27,8 +29,8 @@ export const Pokemons = () => {
             <h2>Pokemons </h2>
             {
                 pokemons.map((pokemon, index) => {
-                    return( 
-                    <Pokemon key={index} name={pokemon.name} url={pokemon.url} />
+                    return (
+                        <Pokemon key={index} name={pokemon.name} url={pokemon.url} />
                     )
                 })
             }
